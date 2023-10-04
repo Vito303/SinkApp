@@ -20,6 +20,7 @@ builder.Services.AddResponseCompression(opts =>
         new[] { "application/octet-stream" });
 });
 
+builder.Services.AddControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,6 +40,7 @@ app.UseRouting();
 app.MapBlazorHub();
 //Creating an endpoint for the TimeHub
 app.MapHub<TimeHub>("/timehub");
+app.MapControllers();
 app.MapFallbackToPage("/_Host");
 
 app.Run();

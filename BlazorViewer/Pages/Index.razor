@@ -9,6 +9,7 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 <p>Time stamp: @time_stamp</p>
+<p>Message: @current_message</p>
 
 @using BlazorViewer.Data;
 @using BlazorViewer.Service
@@ -17,7 +18,8 @@ Welcome to your new app.
 @inject TimeService timeService;
 @inject NavigationManager Navigation
 @code{
-    public string time_stamp;
+    public string time_stamp = "";
+    public string current_message = "";
     private HubConnection? hubConnection;
 
     protected override async Task OnInitializedAsync()
@@ -31,6 +33,12 @@ Welcome to your new app.
                 time_stamp = time.ToString();
                 InvokeAsync(StateHasChanged);
             });
+
+        hubConnection.On<String>("RefreshMessage", message =>
+        {
+            current_message = message;
+            InvokeAsync(StateHasChanged);
+        });
 
         await hubConnection.StartAsync();
     }
