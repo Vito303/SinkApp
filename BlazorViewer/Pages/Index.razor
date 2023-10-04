@@ -1,0 +1,37 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<p>Time stamp: @time_stamp</p>
+
+@using BlazorViewer.Data;
+@using BlazorViewer.Service
+@using Microsoft.AspNetCore.SignalR.Client;
+
+@inject TimeService timeService;
+@inject NavigationManager Navigation
+@code{
+    public string time_stamp;
+    private HubConnection? hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/timehub"))
+            .Build();
+
+        hubConnection.On<DateTime>("RefreshTime", time =>
+            {
+                time_stamp = time.ToString();
+                InvokeAsync(StateHasChanged);
+            });
+
+        await hubConnection.StartAsync();
+    }
+}

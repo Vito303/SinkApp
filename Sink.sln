@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MqttServer", "MqttServer\MqttServer.csproj", "{0CEA5107-46F9-419F-8707-B714E6646664}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sink", "Sink\Sink.csproj", "{9C2751F5-1226-4762-B246-673CCCBA35E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorViewer", "BlazorViewer\BlazorViewer.csproj", "{063A95B7-8712-4F07-8537-F0103619D524}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CEA5107-46F9-419F-8707-B714E6646664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CEA5107-46F9-419F-8707-B714E6646664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CEA5107-46F9-419F-8707-B714E6646664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CEA5107-46F9-419F-8707-B714E6646664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2751F5-1226-4762-B246-673CCCBA35E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2751F5-1226-4762-B246-673CCCBA35E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2751F5-1226-4762-B246-673CCCBA35E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2751F5-1226-4762-B246-673CCCBA35E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{063A95B7-8712-4F07-8537-F0103619D524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063A95B7-8712-4F07-8537-F0103619D524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063A95B7-8712-4F07-8537-F0103619D524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063A95B7-8712-4F07-8537-F0103619D524}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA9C29AC-B9EA-42E7-B32D-59C8BBA10708}
+	EndGlobalSection
+EndGlobal
